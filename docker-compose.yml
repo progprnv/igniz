@@ -1,0 +1,244 @@
+##############################################################
+# encryptCTF 2019 — Unified Docker Compose
+# 
+# Brings up:
+#   - CTFd scoreboard (port 8000)
+#   - All 11 network challenge services
+#   - MariaDB for CTFd
+#   - Redis for CTFd cache
+#   - MariaDB for vault challenge
+#
+# Usage:
+#   docker-compose up -d --build
+#
+# Then visit http://localhost:8000 to configure CTFd.
+# Run: python setup_ctfd.py   to auto-import all challenges.
+##############################################################
+
+version: "3.8"
+
+services:
+  # ============================================================
+  #  CTFd Platform (Scoreboard)
+  # ============================================================
+  ctfd:
+    image: ctfd/ctfd:3.7.0
+    container_name: ctfd
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - UPLOAD_FOLDER=/var/uploads
+      - DATABASE_URL=mysql+pymysql://ctfd:ctfd_password@ctfd-db/ctfd
+      - REDIS_URL=redis://ctfd-cache:6379
+      - WORKERS=4
+      - SECRET_KEY=encryptctf2019_super_secret_key_change_me
+      - LOG_FOLDER=/var/log/CTFd
+      - ACCESS_LOG=-
+      - ERROR_LOG=-
+    volumes:
+      - ctfd-logs:/var/log/CTFd
+      - ctfd-uploads:/var/uploads
+    depends_on:
+      - ctfd-db
+      - ctfd-cache
+    networks:
+      - ctfd-net
+      - default
+
+  ctfd-db:
+    image: mariadb:10.11
+    container_name: ctfd-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ctfd_root_pass
+      MYSQL_USER: ctfd
+      MYSQL_PASSWORD: ctfd_password
+      MYSQL_DATABASE: ctfd
+    volumes:
+      - ctfd-db-data:/var/lib/mysql
+    networks:
+      - ctfd-net
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+
+  ctfd-cache:
+    image: redis:7-alpine
+    container_name: ctfd-cache
+    restart: always
+    volumes:
+      - ctfd-redis-data:/data
+    networks:
+      - ctfd-net
+
+  # ============================================================
+  #  MISC — ham-me-baby (Hamming code challenge)
+  # ============================================================
+  ham-me-baby:
+    build: ./Misc/ham-me-baby
+    container_name: ham-me-baby
+    restart: always
+    ports:
+      - "6969:4444"
+    networks:
+      - default
+
+  # ============================================================
+  #  PWN — x86 Binary Exploitation
+  # ============================================================
+  pwn0:
+    build: ./pwn/x86/pwn0/
+    container_name: pwn0
+    restart: always
+    ports:
+      - "1234:4444"
+    networks:
+      - default
+
+  pwn1:
+    build: ./pwn/x86/pwn1/
+    container_name: pwn1
+    restart: always
+    ports:
+      - "2345:4444"
+    networks:
+      - default
+
+  pwn2:
+    build: ./pwn/x86/pwn2/
+    container_name: pwn2
+    restart: always
+    ports:
+      - "3456:4444"
+    networks:
+      - default
+
+  pwn3:
+    build: ./pwn/x86/pwn3/
+    container_name: pwn3
+    restart: always
+    ports:
+      - "4567:4444"
+    networks:
+      - default
+
+  pwn4:
+    build: ./pwn/x86/pwn4/
+    container_name: pwn4
+    restart: always
+    ports:
+      - "5678:4444"
+    networks:
+      - default
+
+  # ============================================================
+  #  REVERSE ENGINEERING — crackme03
+  # ============================================================
+  crackme03:
+    build: ./re/crackme03/
+    container_name: crackme03
+    restart: always
+    ports:
+      - "7777:4444"
+    networks:
+      - default
+
+  # ============================================================
+  #  WEB — Slash_Slash
+  # ============================================================
+  slash-slash:
+    build: ./web/50_Slash_Slash/
+    container_name: slash-slash
+    restart: always
+    ports:
+      - "5000:8080"
+    environment:
+      - FLAG=encryptCTF{comments_&_indentations_makes_johnny_a_good_programmer}
+    networks:
+      - default
+
+  # ============================================================
+  #  WEB — env (timing challenge)
+  # ============================================================
+  env:
+    build: ./web/75_env/
+    container_name: env
+    restart: always
+    ports:
+      - "6060:8080"
+    networks:
+      - default
+
+  # ============================================================
+  #  WEB — repeaaaaaat (SSTI)
+  # ============================================================
+  repeaaaaaat:
+    build: ./web/repeaaaaaat/
+    container_name: repeaaaaaat
+    restart: always
+    ports:
+      - "5050:8080"
+    networks:
+      - default
+
+  # ============================================================
+  #  WEB — Sweeeeeeeet (Cookie challenge)
+  # ============================================================
+  sweeeeeeeet:
+    build: ./web/Sweeeeeeeet/
+    container_name: sweeeeeeeet
+    restart: always
+    ports:
+      - "8888:80"
+    networks:
+      - default
+
+  # ============================================================
+  #  WEB — vault (SQLi)
+  # ============================================================
+  vault:
+    build: ./web/vault/
+    container_name: vault
+    restart: always
+    ports:
+      - "9090:80"
+    depends_on:
+      - vault-db
+    networks:
+      - vault-net
+      - default
+
+  vault-db:
+    image: mariadb:10.11
+    container_name: vault-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: vault
+    volumes:
+      - ./web/vault/dump:/docker-entrypoint-initdb.d
+      - vault-db-data:/var/lib/mysql
+    networks:
+      vault-net:
+        aliases:
+          - database
+
+# ============================================================
+#  Volumes
+# ============================================================
+volumes:
+  ctfd-db-data:
+  ctfd-redis-data:
+  ctfd-logs:
+  ctfd-uploads:
+  vault-db-data:
+
+# ============================================================
+#  Networks
+# ============================================================
+networks:
+  ctfd-net:
+    driver: bridge
+  vault-net:
+    driver: bridge
+  default:
+    driver: bridge
