@@ -13,7 +13,7 @@ Learn about virtualenv here:
 https://www.youtube.com/watch?v=N5vscPTWKOk&list=PL-osiE80TeTt66h8cVpmbayBKlMTuS55y&index=7
 '''
 
-FLAG = os.getenv("FLAG", "encryptCTF{}")
+FLAG = os.getenv("FLAG", "IGNIZ{s0urc3_c0d3_r3v34l3d_s3cr3ts}")
 
 @app.route('/')
 def index():

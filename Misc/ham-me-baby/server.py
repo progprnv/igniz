@@ -70,5 +70,5 @@ for i in range(100):
     break
 
 if ok:
-  print "here's your flag: encryptCTF{1t_w4s_h4rd_th4n_1_th0ught}"
+  print "here's your flag: IGNIZ{wh1sper_thr0ugh_th3_st4rs}"
 

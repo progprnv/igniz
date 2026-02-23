@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 app.secret_key = "cf49d97a5680998cbddbee283eeb03adbeda772b"
 
+FLAG = "IGNIZ{j1nj4_r3nd3r_str1ng_h4ck3d_x7r4v4g4nz4}"
+
 @app.route("/lol_no_one_will_see_whats_here")
 def troll1():
     return render_template("troll1.html")

@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY app ./
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
-ENV FLAG="encryptCTF{comments_&_indentations_makes_johnny_a_good_programmer}"
+ENV FLAG="IGNIZ{s0urc3_c0d3_r3v34l3d_s3cr3ts}"
 
 EXPOSE 8080
 RUN useradd slashslash
