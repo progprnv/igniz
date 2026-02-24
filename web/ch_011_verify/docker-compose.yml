@@ -1,8 +1,8 @@
 version: "3"
 services:
-  sweeeeeeeet:
+  ch_011_verify:
     build: .
     ports:
       - 8080:80
-    container_name: Sweeeeeeeet
+    container_name: ch_011_verify
     restart: always

@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  ham-me-baby:
+  ch_007_protocol:
     build: .
     ports:
       - 6969:4444
-    container_name: ham-me-baby      
+    container_name: ch_007_protocol      

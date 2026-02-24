@@ -1,10 +1,10 @@
 version: "3"
 services:
-  vault:
+  ch_012_login:
     build: .
     ports:
       - 9090:80
-    container_name: vault
+    container_name: ch_012_login
     restart: always
     depends_on: 
       - database

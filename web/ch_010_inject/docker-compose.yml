@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  repeat:
+  ch_010_inject:
     build: .
     ports:
       - 5050:8080
     restart: always
-    container_name: repeaaaaaat
+    container_name: ch_010_inject
