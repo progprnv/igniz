@@ -1,10 +1,10 @@
 version: "3"
 services:
-  ch_012_login:
+  sql_shenanigans:
     build: .
     ports:
       - 9090:80
-    container_name: ch_012_login
+    container_name: sql_shenanigans
     restart: always
     depends_on: 
       - database

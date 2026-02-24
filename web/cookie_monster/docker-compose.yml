@@ -1,8 +1,8 @@
 version: "3"
 services:
-  ch_011_verify:
+  cookie_monster:
     build: .
     ports:
       - 8080:80
-    container_name: ch_011_verify
+    container_name: cookie_monster
     restart: always

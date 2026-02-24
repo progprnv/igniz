@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  ch_010_inject:
+  template_tricks:
     build: .
     ports:
       - 5050:8080
     restart: always
-    container_name: ch_010_inject
+    container_name: template_tricks

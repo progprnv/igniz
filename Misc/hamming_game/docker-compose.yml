@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  ch_007_protocol:
+  hamming_game:
     build: .
     ports:
       - 6969:4444
-    container_name: ch_007_protocol      
+    container_name: hamming_game      
