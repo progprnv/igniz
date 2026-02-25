@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+import base64
 
-flag = "encryptCTF{3T_7U_BRU73?!}"
-#flagb64 = flag.encode('base64') <-- not used 
+flag = "IGNIZ{3T_7U_BRU73?!}"
+#flagb64 = flag.encode('base64')  <-- not used 
 ciphertext = ""
 for char in flag:
     ciphertext += chr(ord(char) + 24)
 
-print ciphertext.encode('base64')
+print(base64.b64encode(ciphertext.encode()).decode())

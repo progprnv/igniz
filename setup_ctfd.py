@@ -110,7 +110,7 @@ CHALLENGES = [
         "name": "AEeeeeS",
         "category": "Crypto",
         "value": 75,
-        "flag": "encryptCTF{3Y3S_4R3_0N_A3S_3CB!}",
+        "flag": "IGNIZ{3Y3S_4R3_0N_A3S_3CB!}",
         "description": (
             "He encrypted the flag using AES ECB.\n\n"
             "The key he gave was:\n"
@@ -119,7 +119,7 @@ CHALLENGES = [
             "10110010101111001`\n\n"
             "Is he mad?\n\n"
             "Ciphertext:\n"
-            "`c68145ccbc1bd6228da45a574ad9e29a77ca32376bc1f2a1e4cd66c640450d77`"
+            "`e31c491719831e262b84fa92e3973240ec7d3952814fa465f4de7e009b3d5a89`"
         ),
         "files": [
             os.path.join(BASE, "Crypto", "AEeeeeS", "Challenge_Description.txt"),
@@ -130,7 +130,7 @@ CHALLENGES = [
         "name": "(TopNOTCH)SA",
         "category": "Crypto",
         "value": 150,
-        "flag": "encryptCTF{1%_0F_1%}",
+        "flag": "IGNIZ{1%_0F_1%}",
         "description": (
             "I encrypted the flag with RSA... but the primes might be a little small. "
             "Can you break it?\n\n"
@@ -145,7 +145,7 @@ CHALLENGES = [
         "name": "hard_looks",
         "category": "Crypto",
         "value": 50,
-        "flag": "encryptCTF{W45_17_H4RD_3N0UGH?!}",
+        "flag": "IGNIZ{W45_17_H4RD_3N0UGH?!}",
         "description": (
             "This cipher looks hard... but is it really?\n\n"
             "Dashes and underscores — what could they mean?"
@@ -158,7 +158,7 @@ CHALLENGES = [
         "name": "Julius,Q2Flc2FyCg==",
         "category": "Crypto",
         "value": 50,
-        "flag": "encryptCTF{3T_7U_BRU73?!}",
+        "flag": "IGNIZ{3T_7U_BRU73?!}",
         "description": (
             "Et tu, Brute?\n\n"
             "Julius Caesar liked to keep secrets. "
@@ -172,7 +172,7 @@ CHALLENGES = [
         "name": "RSA Baby",
         "category": "Crypto",
         "value": 100,
-        "flag": "encryptCTF{74K1NG_B4BY_S73PS}",
+        "flag": "IGNIZ{74K1NG_B4BY_S73PS}",
         "description": (
             "Taking baby steps with RSA.\n\n"
             "I encrypted the flag but left something behind... "
@@ -191,7 +191,7 @@ CHALLENGES = [
         "name": "Get Schwifty",
         "category": "Forensics",
         "value": 150,
-        "flag": "encryptCTF{wubba_lubba_dub_dub}",
+        "flag": "IGNIZ{wubba_lubba_dub_dub}",
         "description": (
             "Show me what you got!\n\n"
             "There are hidden files in this disk image. "
@@ -199,14 +199,14 @@ CHALLENGES = [
             "**Note:** This challenge has 2 flags. Submit either one."
         ),
         "hints": [
-            {"content": "Second flag: encryptCTF{alw4ys_d3lete_y0ur_f1les_c0mpletely}", "cost": 0},
+            {"content": "Second flag: IGNIZ{alw4ys_d3lete_y0ur_f1les_c0mpletely}", "cost": 0},
         ],
     },
     {
         "name": "Journey to the Centre of the File 1",
         "category": "Forensics",
         "value": 75,
-        "flag": "encryptCTF{w422up_b14tch3s}",
+        "flag": "IGNIZ{w422up_b14tch3s}",
         "description": (
             "It's like a Russian nesting doll... but with archives.\n\n"
             "How deep does this go?"
@@ -216,7 +216,7 @@ CHALLENGES = [
         "name": "Journey to the Centre of the File 2",
         "category": "Forensics",
         "value": 150,
-        "flag": "encryptCTF{f33ls_g00d_d0nt_it?}",
+        "flag": "IGNIZ{f33ls_g00d_d0nt_it?}",
         "description": (
             "The sequel is always harder.\n\n"
             "More compression formats this time — zip, bzip2, gzip. "
@@ -234,7 +234,7 @@ CHALLENGES = [
         "name": "crack-jack",
         "category": "Misc",
         "value": 75,
-        "flag": "encryptCTF{C4acK!ng_7h3_Uncr4ck4bl3}",
+        "flag": "IGNIZ{C4acK!ng_7h3_Uncr4ck4bl3}",
         "description": (
             "Can you crack the password?\n\n"
             "Here's the encrypted password and a wordlist. Good luck!"
@@ -248,7 +248,7 @@ CHALLENGES = [
         "name": "ham-me-baby",
         "category": "Misc",
         "value": 150,
-        "flag": "encryptCTF{1t_w4s_h4rd_th4n_1_th0ught}",
+        "flag": "IGNIZ{1t_w4s_h4rd_th4n_1_th0ught}",
         "description": (
             "Hamming it up!\n\n"
             "Connect to the server and fix the Hamming(7,4) codes. "
@@ -264,7 +264,7 @@ CHALLENGES = [
         "name": "pwn0",
         "category": "Pwn",
         "value": 50,
-        "flag": "encryptCTF{L3t5_R4!53_7h3_J05H}",
+        "flag": "IGNIZ{L3t5_R4!53_7h3_J05H}",
         "description": (
             "Baby's first buffer overflow.\n\n"
             "Can you change the variable to get the flag?"
@@ -279,7 +279,7 @@ CHALLENGES = [
         "name": "pwn1",
         "category": "Pwn",
         "value": 100,
-        "flag": "encryptCTF{Buff3R_0v3rfl0W5_4r3_345Y}",
+        "flag": "IGNIZ{Buff3R_0v3rfl0W5_4r3_345Y}",
         "description": (
             "Classic ret2func.\n\n"
             "There's a hidden function that gives you a shell. "
@@ -295,7 +295,7 @@ CHALLENGES = [
         "name": "pwn2",
         "category": "Pwn",
         "value": 150,
-        "flag": "encryptCTF{N!c3_j0b_jump3R}",
+        "flag": "IGNIZ{N!c3_j0b_jump3R}",
         "description": (
             "Time to inject some shellcode.\n\n"
             "There's a handy gadget in the binary. Can you use it?"
@@ -310,7 +310,7 @@ CHALLENGES = [
         "name": "pwn3",
         "category": "Pwn",
         "value": 200,
-        "flag": "encryptCTF{70_7h3_C3nt3R_0f_L!bC}",
+        "flag": "IGNIZ{70_7h3_C3nt3R_0f_L!bC}",
         "description": (
             "Return to libc.\n\n"
             "No useful functions in the binary this time. "
@@ -326,7 +326,7 @@ CHALLENGES = [
         "name": "pwn4",
         "category": "Pwn",
         "value": 250,
-        "flag": "encryptCTF{Y0u_4R3_7h3_7ru3_King_0f_53v3n_KingD0ms}",
+        "flag": "IGNIZ{Y0u_4R3_7h3_7ru3_King_0f_53v3n_KingD0ms}",
         "description": (
             "Format string exploitation.\n\n"
             "The program trusts your input a little too much. "
@@ -346,7 +346,7 @@ CHALLENGES = [
         "name": "crackme01",
         "category": "Reverse Engineering",
         "value": 75,
-        "flag": "encryptCTF{gdb_or_r2?}",
+        "flag": "IGNIZ{gdb_or_r2?}",
         "description": (
             "A simple crackme.\n\n"
             "Find the correct key to unlock the flag. "
@@ -360,7 +360,7 @@ CHALLENGES = [
         "name": "crackme02",
         "category": "Reverse Engineering",
         "value": 100,
-        "flag": "encryptCTF{Algorithms-not-easy}",
+        "flag": "IGNIZ{Algorithms-not-easy}",
         "description": (
             "Another crackme, but this time with XOR.\n\n"
             "Find the right username and password to decrypt the flag."
@@ -373,7 +373,7 @@ CHALLENGES = [
         "name": "crackme03",
         "category": "Reverse Engineering",
         "value": 200,
-        "flag": "encryptCTF{B0mB_D!ffu53d}",
+        "flag": "IGNIZ{B0mB_D!ffu53d}",
         "description": (
             "Defuse the bomb!\n\n"
             "5 stages, 5 inputs. Get them all right or BOOM. "
@@ -392,7 +392,7 @@ CHALLENGES = [
         "name": "Slash Slash",
         "category": "Web",
         "value": 50,
-        "flag": "encryptCTF{comments_&_indentations_makes_johnny_a_good_programmer}",
+        "flag": "IGNIZ{comments_&_indentations_makes_johnny_a_good_programmer}",
         "description": (
             "A simple web challenge.\n\n"
             "Comments are a programmer's best friend... or worst enemy."
@@ -403,7 +403,7 @@ CHALLENGES = [
         "name": "env",
         "category": "Web",
         "value": 75,
-        "flag": "encryptCTF{v1rtualenvs_4re_c00l}",
+        "flag": "IGNIZ{v1rtualenvs_4re_c00l}",
         "description": (
             "Virtualenvs are cool.\n\n"
             "The server knows what time it is. Do you?"
@@ -414,7 +414,7 @@ CHALLENGES = [
         "name": "repeaaaaaat",
         "category": "Web",
         "value": 150,
-        "flag": "encryptCTF{!nj3c7!0n5_4r3_b4D}",
+        "flag": "IGNIZ{!nj3c7!0n5_4r3_b4D}",
         "description": (
             "What's in a template?\n\n"
             "The server repeats what you say... but does it do more than that?"
@@ -428,7 +428,7 @@ CHALLENGES = [
         "name": "Sweeeeeeeet",
         "category": "Web",
         "value": 100,
-        "flag": "encryptCTF{4lwa4y5_Ch3ck_7h3_c00ki3s}",
+        "flag": "IGNIZ{4lwa4y5_Ch3ck_7h3_c00ki3s}",
         "description": (
             "Something sweet is hidden in the cookies.\n\n"
             "Check your browser's cookie jar carefully."
@@ -439,7 +439,7 @@ CHALLENGES = [
         "name": "vault",
         "category": "Web",
         "value": 150,
-        "flag": "encryptCTF{i_H4t3_inJ3c7i0n5}",
+        "flag": "IGNIZ{i_H4t3_inJ3c7i0n5}",
         "description": (
             "Break into the vault.\n\n"
             "The login page looks secure... or is it?"

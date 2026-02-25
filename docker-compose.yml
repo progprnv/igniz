@@ -152,7 +152,7 @@ services:
     ports:
       - "5000:8080"
     environment:
-      - FLAG=encryptCTF{comments_&_indentations_makes_johnny_a_good_programmer}
+      - FLAG=IGNIZ{comments_&_indentations_makes_johnny_a_good_programmer}
     networks:
       - default
 
